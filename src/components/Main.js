@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import avatarEdit from '../images/avatar_edit.svg';
 import defaultAvatar from '../images/photo.jpg';
 import { api } from '../utils/Api';
+import Card from './Card';
 
-function Main({onEditProfile, onAddPlace, onEditAvatar}) {
+function Main({onEditProfile, onAddPlace, onEditAvatar, handleCardClick, cards}) {
     const [userName, setUserName] = useState();
     const [userDescription, setUserDescription] = useState();
     const [userAvatar, setUserAvatar] = useState(defaultAvatar);
@@ -21,7 +22,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar}) {
     }, []);
 
     return (
-        <div className="main">
+        <main className="main">
             <section className="profile">
             <div className="profile__avatar" style={{ backgroundImage: `url(${userAvatar})` }} alt="Фото в профиле" onClick={onEditAvatar}>
                 <div className="profile__avatar-edit">
@@ -37,8 +38,12 @@ function Main({onEditProfile, onAddPlace, onEditAvatar}) {
             </div>
             <button type="button" aria-label="Добавить карточку" className="profile__btn-add" onClick={onAddPlace}></button>
             </section>
-            <section className="elements"></section>
-        </div>
+            <section className="elements">
+            <div className="elements">
+               {cards?.map(card => <Card card={card} onCardClick={handleCardClick} key={card._id} />)}
+            </div>
+            </section>
+        </main>
     );
 }
 
