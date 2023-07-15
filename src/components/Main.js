@@ -1,25 +1,25 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import avatarEdit from '../images/avatar_edit.svg';
 import defaultAvatar from '../images/photo.jpg';
-import { api } from '../utils/Api';
 import Card from './Card';
+import { CurrentUserContext } from './../contexts/CurrentUserContext';
+import { CurrentCardContext } from '../contexts/CurrentCardContext';
 
-function Main({onEditProfile, onAddPlace, onEditAvatar, handleCardClick, cards}) {
+function Main({onEditProfile, onAddPlace, onEditAvatar, handleCardClick, onCardLike, onCardDelete}) {
     const [userName, setUserName] = useState();
     const [userDescription, setUserDescription] = useState();
     const [userAvatar, setUserAvatar] = useState(defaultAvatar);
+    const currentUser = React.useContext(CurrentUserContext);
+    const cards = React.useContext(CurrentCardContext);
 
     useEffect(() => {
-        api.getUserInfo()
-        .then((userData) => {
-            setUserName(userData.name);
-            setUserDescription(userData.about);
-            setUserAvatar(userData.avatar);
-        })
-        .catch(() => {
-            console.log('Ошибка загрузки user')
-        })
-    }, []);
+        if (currentUser) {
+            setUserName(currentUser.name);
+            setUserDescription(currentUser.about);
+            setUserAvatar(currentUser.avatar);
+        }
+    }, [currentUser]);
 
     return (
         <main className="main">
@@ -39,9 +39,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, handleCardClick, cards})
             <button type="button" aria-label="Добавить карточку" className="profile__btn-add" onClick={onAddPlace}></button>
             </section>
             <section className="elements">
-            <div className="elements">
-               {cards?.map(card => <Card card={card} onCardClick={handleCardClick} key={card._id} />)}
-            </div>
+                {cards?.map(card => <Card card={card} onCardClick={handleCardClick} onCardLike={onCardLike} onCardDelete={onCardDelete} key={card._id} />)}
             </section>
         </main>
     );
