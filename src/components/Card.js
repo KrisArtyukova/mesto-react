@@ -15,19 +15,17 @@ function Card({ card, onCardClick, onCardLike, onCardDelete}) {
     );; 
 
     function handleLikeClick(event, card) {
-        event.stopPropagation();
         onCardLike(card)
     }
     
     function handleDeleteClick(event, card) {
-        event.stopPropagation();
         onCardDelete(card)
     }
 
     return (
-        <article className="element" onClick={() => onCardClick(card)}>
+        <article className="element">
            {isOwn && <button type="button" aria-label="Удалить карточку" className="element__del-btn" onClick={(event) => handleDeleteClick(event, card)}></button>}
-            <img className="element__img" src={card.link} alt={card.name} />
+            <img className="element__img" src={card.link} alt={card.name} onClick={() => onCardClick(card)}/>
             <div className="element__caption">
                 <h2 className="element__title">{card.name}</h2>
                 {/* <button type="button" className="element__like-btn"><img src="./images/heart.svg" alt="Кнопка сердечко"></></button> */}

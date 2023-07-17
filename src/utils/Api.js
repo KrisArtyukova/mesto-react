@@ -4,6 +4,11 @@ class Api {
     this._headers = options.headers;
   }
 
+  async _request(url, options) {
+    const res = await fetch(`${this._baseUrl}/${url}`, options);
+    return this._checkResponse(res);
+  }
+
   _checkResponse(res) {
     if (res.ok) {
       return res.json();
@@ -13,103 +18,78 @@ class Api {
   }
 
   async getInitialCards() {
-    const res = await fetch(`${this._baseUrl}/cards`, {
+    return await this._request("/cards", {
       headers: {
         authorization: this._headers.authorization,
       }
     });
-    return this._checkResponse(res);
-  // другие методы работы с API
   }
 
   async addCard(name, link) {
-    const res = await fetch(`${this._baseUrl}/cards`, {
+    return await this._request("/cards", {
       method: 'POST',
-      headers: {
-        authorization: this._headers.authorization,
-        'Content-Type': this._headers['Content-Type'],
-      },
+      headers: this._headers,
       body: JSON.stringify({
         name,
         link,
       })
     });
-    return this._checkResponse(res);
-  // другие методы работы с API
   }
 
   async deleteCard(id) {
-   const res = await fetch(`${this._baseUrl}/cards/${id}`, {
+    return await this._request(`/cards/${id}`, {
       method: 'DELETE',
       headers: {
         authorization: this._headers.authorization,
       }
     });
-    return this._checkResponse(res);
-  // другие методы работы с API
   }
 
   async addLike(id) {
-    const res = await fetch(`${this._baseUrl}/cards/${id}/likes`, {
+    return await this._request(`/cards/${id}/likes`, {
       method: 'PUT',
       headers: {
         authorization: this._headers.authorization,
       }
     });
-    return this._checkResponse(res);
-  // другие методы работы с API
   }
 
   async deleteLike(id) {
-    const res = await fetch(`${this._baseUrl}/cards/${id}/likes`, {
+    return await this._request(`/cards/${id}/likes`, {
       method: 'DELETE',
       headers: {
         authorization: this._headers.authorization,
       }
     });
-    return this._checkResponse(res);
-  // другие методы работы с API
   }
 
   async getUserInfo() {
-    const res = await fetch(`${this._baseUrl}/users/me`, {
+    return await this._request("/users/me", {
       headers: {
         authorization: this._headers.authorization,
       }
     });
-    return this._checkResponse(res);
-  // другие методы работы с API
   }
 
   async editUserInfo(name, about) {
-    const res = await fetch(`${this._baseUrl}/users/me`, {
+    return await this._request("/users/me", {
       method: 'PATCH',
-      headers: {
-        authorization: this._headers.authorization,
-        'Content-Type': this._headers['Content-Type'],
-      },
+      headers: this._headers,
       body: JSON.stringify({
         name,
         about,
       })
     });
-    return this._checkResponse(res);
-  // другие методы работы с API
   }
 
   async editUserAvatar(avatar) {
-    const res = await fetch(`${this._baseUrl}/users/me/avatar`, {
+    return await this._request("/users/me/avatar", {
       method: 'PATCH',
-      headers: {
-        authorization: this._headers.authorization,
-        'Content-Type': this._headers['Content-Type'],
-      },
+      headers: this._headers,
       body: JSON.stringify({
         avatar,
       })
     });
-    return this._checkResponse(res);
-  // другие методы работы с API
   }
 
 }

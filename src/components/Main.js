@@ -7,8 +7,8 @@ import { CurrentUserContext } from './../contexts/CurrentUserContext';
 import { CurrentCardContext } from '../contexts/CurrentCardContext';
 
 function Main({onEditProfile, onAddPlace, onEditAvatar, handleCardClick, onCardLike, onCardDelete}) {
-    const [userName, setUserName] = useState();
-    const [userDescription, setUserDescription] = useState();
+    const [userName, setUserName] = useState("");
+    const [userDescription, setUserDescription] = useState("");
     const [userAvatar, setUserAvatar] = useState(defaultAvatar);
     const currentUser = React.useContext(CurrentUserContext);
     const cards = React.useContext(CurrentCardContext);
