@@ -1,3 +1,5 @@
+import { USER_TOKEN } from "./constants";
+
 class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
@@ -94,10 +96,58 @@ class Api {
 
 }
 
+class AuthApi extends Api {
+  constructor(options) {
+    super(options);
+    this._baseUrl = options.baseUrl;
+    this._headers = options.headers;
+  }
+
+  async registrate(password, email) {
+    return await super._request("signup", {
+      method: 'POST',
+      headers: this._headers,
+      body: JSON.stringify({
+        password,
+        email,
+      })
+    });
+  }
+
+  async login(password, email) {
+    return await super._request("signin", {
+      method: 'POST',
+      headers: this._headers,
+      body: JSON.stringify({
+        password,
+        email,
+      })
+    });
+  }
+
+  async checkAuth() {
+    const token = localStorage.getItem(USER_TOKEN);
+    if (!token) throw new Error('Отсутствует токен');
+    
+    return await super._request("users/me", {
+      method: 'GET',
+      headers: { ...this._headers, "Authorization": `Bearer ${token}`},
+    });
+  }
+
+}
+
 export const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-68',
   headers: {
     authorization: 'ad409708-ab6d-48ec-b3a6-3e6c2313ee38',
+    'Content-Type': 'application/json'
+  }
+});
+
+export const authApi = new AuthApi({
+  baseUrl: 'https://auth.nomoreparties.co',
+  headers: {
     'Content-Type': 'application/json'
   }
 });
