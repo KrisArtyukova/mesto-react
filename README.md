@@ -3,7 +3,7 @@
 
 Ссылка на курс - https://practicum.yandex.ru/web/
 
-Ссылка на проект для просмотра - https://filimonovalexey.github.io/mesto/
+Ссылка на проект для просмотра - https://krisartyukova.github.io/mesto/
 
 1. Проектная работа на применение начальных навыков JS. Цель - реализовать возможность редактирования данных профиля через диалоговое окно Pop-up;
 
@@ -20,10 +20,6 @@
 3. реализована функция лайка и возможность удаления карточек;
 4. добавлена возможность добавления карточек по ссылке.
 
-Ссылка на проект для просмотра - https://filimonovalexey.github.io/mesto/
-
-Проект будет доработана в части внесения корректировок и исправления ошибок.
-
 
 #### **Проектная работа №6 на курсе Яндекс Практикум по Веб-разработке**
 
@@ -33,10 +29,6 @@
 3. реализована возможность закрытия попапа кликом на оверлей;
 4. реализована возможность закрытия попапа нажатием на Esc.
 
-Ссылка на проект для просмотра - 
-
-Проект будет доработана в части внесения корректировок и исправления ошибок.
-
 
 #### **Проектная работа №7 на курсе Яндекс Практикум по Веб-разработке**
 
@@ -44,9 +36,6 @@
 1. созданы классы Card и FormValidator;
 2. выполнено разбиение кода js на модули, проект имеет три js файла: Card.js, FormValidator.js, index.js;
 
-Ссылка на проект для просмотра - 
-
-Проект будет доработана в части внесения корректировок и исправления ошибок.
 
 #### **Проектная работа №8 на курсе Яндекс Практикум по Веб-разработке**
 
@@ -62,8 +51,4 @@
 
 Продолжение проектной работы mesto. Подключение проекта к серверу.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
