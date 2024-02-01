@@ -1,67 +1,66 @@
-# Getting Started with Create React App
+# Проект: MESTO
+#### **Проектная работа №4 на курсе Яндекс Практикум по Веб-разработке**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ссылка на курс - https://practicum.yandex.ru/web/
 
-## Available Scripts
+Ссылка на проект для просмотра - https://filimonovalexey.github.io/mesto/
 
-In the project directory, you can run:
+1. Проектная работа на применение начальных навыков JS. Цель - реализовать возможность редактирования данных профиля через диалоговое окно Pop-up;
 
-### `npm start`
+2. В работе применены базовые методы библиотеки DOM;
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Проект будет доработан в части устранения ошибок и внесения корректировок в проект.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+#### **Проектная работа №5 на курсе Яндекс Практикум по Веб-разработке**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Продолжение проектной работы mesto. Расширены функциональные возможности странички, а именно:
+1. реализована загрузка массива карточек с использованием javascript;
+2. добавлена форма добавления карточек;
+3. реализована функция лайка и возможность удаления карточек;
+4. добавлена возможность добавления карточек по ссылке.
 
-### `npm run build`
+Ссылка на проект для просмотра - https://filimonovalexey.github.io/mesto/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Проект будет доработана в части внесения корректировок и исправления ошибок.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### **Проектная работа №6 на курсе Яндекс Практикум по Веб-разработке**
 
-### `npm run eject`
+Продолжение проектной работы mesto. Расширены функциональные возможности странички, а именно:
+1. добавлена валидация формы «Редактировать профиль»;
+2. добавлена валидация формы «Новое место»;
+3. реализована возможность закрытия попапа кликом на оверлей;
+4. реализована возможность закрытия попапа нажатием на Esc.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Ссылка на проект для просмотра - 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Проект будет доработана в части внесения корректировок и исправления ошибок.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### **Проектная работа №7 на курсе Яндекс Практикум по Веб-разработке**
 
-## Learn More
+Продолжение проектной работы mesto. Проведен рефакторинг кода в части:
+1. созданы классы Card и FormValidator;
+2. выполнено разбиение кода js на модули, проект имеет три js файла: Card.js, FormValidator.js, index.js;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ссылка на проект для просмотра - 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Проект будет доработана в части внесения корректировок и исправления ошибок.
 
-### Code Splitting
+#### **Проектная работа №8 на курсе Яндекс Практикум по Веб-разработке**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Продолжение проектной работы mesto. Проведен рефакторинг кода в части:
+1. Созданы классы: Popup, PopupWithImage, PopupWithForm, UserInfo;
+2. Сборка проекта осуществлена с помощью Вебпак;
 
-### Analyzing the Bundle Size
+Инструкция по запуску проекта:
+1) Клонируем репозиторий себе на ПК;
+2) В терминале поочередно вписываем команды: npm install --> npm run build --> npm run dev
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### **Проектная работа №9 на курсе Яндекс Практикум по Веб-разработке**
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
+Продолжение проектной работы mesto. Подключение проекта к серверу.
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
